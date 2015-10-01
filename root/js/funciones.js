@@ -5,21 +5,26 @@ function generar(numPer, numGrupos)
 	var g1=new Array($total);		
 	for(var n=0;n<$total;n++)
 	{
-		var v=Math.random(1,$total);
 		if(n==0)
 		{
+			var v=getRandomInt(1,$total);
 			g1[n]=v;
 			document.write(g1[n]+" ");
 		}
 		else
 		{
-			while(g1(n-1)==v)
+			var v=getRandomInt(1,$total);
+			g1[n]=v;
+			while(g1[n-1]==v)
 			{
-				v=Math.random(1,$total);
+				var v=getRandomInt(1,$total);
 			}
 			g1[n]=v;
-			document.write(g1[n]+" ");
+			document.write(g1[n]+" ");	
 		}
 	}
-	alert($total);
+}
+function getRandomInt(min, max) 
+{
+  	return Math.floor(Math.random() * (max - min)) + min;
 }

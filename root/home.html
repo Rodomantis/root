@@ -46,6 +46,7 @@
 -->
 
 <form role="form" class="col-xs-5">
+  <div class="panel panel-default">
   <div class="form-group">
     <label for="ejemplo_email_1"># Personas</label>
     <input type="text" class="form-control" id="Personas"
@@ -56,10 +57,24 @@
     <input type="text" class="form-control" id="Grupos" 
            placeholder="Introducir numero de grupo">
   </div>
-  <button type="submit" class="btn btn-default" onclick="generar($('#Personas').val(),$('#Grupos').val());">Enviar</button>
+  <button type="button" class="btn btn-default" onclick="generar($('#Personas').val(),$('#Grupos').val());">Enviar</button>
+  </div>	
 </form>
-
-
+<form role="form" class="col-xs-5">
+	<div class="panel panel-default">
+	<div class="form-group">
+		<label for="LabelNombre">Añadir nombre</label>
+		<input type="text" class="form-control" id="NombrePersona" placeholder="Introduce nombre de persona">
+	</div>
+	<div class="form-group">
+	<button type="button" class="btn btn-default" onclick="$('#listaNombres').append('<li>'+$('#NombrePersona').val()+'</li>');">+</button>
+	</div>
+	<div class="panel panel-default" style="width: 100%; height: 100px; overflow: auto">
+		<ol id="listaNombres">
+		</ol>
+	</div>
+	</div>
+</form>
 
 
 </body>
